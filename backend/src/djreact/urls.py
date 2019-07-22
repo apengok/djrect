@@ -19,7 +19,8 @@ from django.conf.urls import url
 
 urlpatterns = [
     path(r'api-auth/', include('rest_framework.urls')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     path('admin/', admin.site.urls),
-    
     url('api/',include('articles.api.urls',namespace='articles-api'))
 ]
